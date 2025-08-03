@@ -1,0 +1,259 @@
+Imagine a future in which humans succeed in colonizing other planetary
+systems. It is then easy to imagine an intergalactic human population
+numbering something huge beyond imagining – 1040, say – all, one
+hopes, leading fulfilling lives. On a purely utilitarian reckoning, the net
+happiness in such a future so astronomically outweighs that of the global
+population today that we should stop at nothing to bring it about.
+Imagine, on the other hand, that we develop a superintelligent AI so superior
+to us that it decides humankind to be irrelevant or a hindrance – and wipes us
+out. Total human happiness: zero. In that case, no goal is more important than
+averting this “alignment problem”, in which our interests do not fit with those
+of the machine. World poverty, climate change, pandemic disease – all are
+relatively trivial in comparison.
+These are not the musings of a wild millenarian cult, but are among the
+scenarios envisaged, and the positions espoused, by the most powerful and
+well-resourced coterie of influencers on the planet: tech billionaires such as the
+X and Tesla owner Elon Musk, the PayPal founder Peter Thiel, Sam Altman of
+OpenAI, the software entrepreneur Marc Andreessen, and those they fund.
+Their ethos pervades Silicon Valley: they advise governments (especially
+Donald Trump’s, but we can number Boris Johnson’s former strategist Dominic
+Cummings in their ranks), hold academic positions at Oxford and Harvard, and
+lead influential think tanks.
+Yet there are few scientific experts among them. As the science writer Adam
+Becker explains in More Everything Forever, their visions depend largely on
+bogus philosophy coupled to technologies, such as nanorobots the size of
+viruses, that not only do not exist, but are not on any serious scientist’s
+research agenda. Occasionally, a real expert such as Stephen Hawking or the
+Nobel laureate in physics Geoffrey Hinton might stray beyond their expertise to
+make a remark that seems to support such fantasies – witness Hawking saying
+in 2014 that AI “could spell the end of the human race” – generally to a rapt
+response from a credulous press, oblivious or wilfully blind to the sea of eyerolling
+from those better informed.
+Every now and then, though, the mask falls – and the often racist, supremacist,
+anti-democratic or eugenicist leanings of this community are exposed. Take the
+comment made in 1996 by the philosopher Nick Bostrom, of the Future of
+Humanity Institute in Oxford, that “it is probable that black people have a
+lower average IQ than mankind in general”. (He has since apologized, without
+admitting that the claim has no scientific basis. “It’s not my area of expertise”,
+he says, “so I don’t really know.”) Or take the contention by the AI safety
+consultant Nick Beckstead in 2013 that “it now seems more plausible to me that
+saving a life in a rich country is substantially more important than saving a life
+in a poor country”. And here is Andreessen, whose vision Becker calls
+“permanent galactic fascism”, in full Nietzschean mode: “Beauty exists only in
+struggle … We believe in greatness … ambition, aggression, persistence,
+relentlessness – strength”. Thiel makes no secret of his contempt for
+democratic institutions; his enthusiasm for space colonization is based in part
+on the understanding that it would allow a cohort of humanity to be free of
+them. As for Musk, who has condemned empathy as “the fundamental
+weakness of western civilization”, his recent “Roman salute” spoke louder than
+any words.
+Becker explains how we got to this perilous juncture. One key driver, he
+believes, is the effective altruism (EA) movement, which began with the
+argument that, if we truly believe in helping the needy, our goal should be to
+make a large amount of money by whatever means necessary, then channel it
+into charitable causes. Before he was jailed for fraud, the entrepreneur and EA
+advocate Sam Bankman-Fried showed that he took the first part of that task
+seriously, while showing less sign of getting round to the second. Gradually, the
+emphasis of EA shifted from the plight of people who actually exist to those
+who could potentially exist in what Becker calls “our glorious-yet-improbable
+science-fictional future” – and whose hypothetical numbers so exceed our own
+that no here-and-now problem can compete.
+Once this ideal has been established, anything goes. “If we had a trillion
+humans”, Amazon’s founder, Jeff Bezos, has fantasized, “we would have a
+thousand Einsteins and a thousand Mozarts.” And if, by this logic, democracy
+stands in the way, then it is time to trash democracy. Becker writes:
+Theirs is an “ideology of technological salvation” in which all problems are
+“The credence that tech billionaires give to these science-fictional
+futuresvalidates their pursuit of more – to portray the growth of their
+business as a moral imperative, to reduce the complex problems of
+the world to simple questions of technology, to justify nearly any
+action they might want to take – all in the name of saving humanity
+from a threat that doesn’t exist, aiming at a utopia that will never
+come.”
+problems about technology. And that, needless to say, is great news if you’re a
+tech entrepreneur – and is catnip to credulous investors unable to distinguish
+science from its superficial trappings.
+And superficial they certainly are. With admirable clarity and patience, Becker
+dismantles the fantasies one by one: the AI apocalypse that obscures the real
+and immediate problems the algorithms are causing, concerning bias,
+misinformation and energy consumption; the absurd notion of “mind
+uploading” and the transcendental Singularity that will grant us immortality in
+a digital nirvana (“All of humanity, running on a computer, until the end of
+time”); the pipe dream of creating a civilization of billions on airless, frigid,
+radiation-strafed Mars. It must have been dispiriting to have to wade through
+so much junk science and trite philosophy. Yet it is not, Becker rightly cautions,
+that these people are stupid. In many cases, they are extremely articulate, well
+read and sharp. The problem is that a reflexive contrarianism, coupled with
+worldly success, has eroded their ability to think and evaluate evidence to the
+point where they believe all real experts are idiots, conventional wisdom is
+always wrong, and only they have the independence of thought to figure it all
+out.
+Such delusions can only really be understood as a form of theology: these tech
+gurus tend to be deeply antagonistic to religion (though, tellingly, some come
+from fundamentalist Christian backgrounds, and Thiel, for example, has
+assimilated what he refers to as a “heterodox Christianity” into his thinking)
+because they have their own stories of heaven (techno utopia) and hell
+(stagnation, caused by socialism and corruption by the “woke mind virus”).
+We, in our turn, make them the new pontiffs, hailing them as geniuses as they
+preach to true believers about the approaching technological rapture or day of
+reckoning. Evidence of a messiah complex pervades their discourse: “I’m the
+only one who can make the effort … I am a hero”, says the computer scientist
+and influential AI commentator Eliezer Yudkowsky, whose new book, If
+Anyone Builds It, Everyone Dies, is due out this autumn. Musk, we now know,
+is systematically spreading his allegedly superior genes by impregnating an
+undisclosed number of women with a “legion” of children running well into
+double figures.
+Writing More Everything Forever took guts: as Becker surely knows, he is
+critiquing a movement fuelled by unfathomable reserves of anger, resolve and
+anomie, not to mention wealth and power. He argues that the only reason we
+are forced to confront these fantasies is that they come from people who can
+buy public and political influence. But, as the historian Quinn Slobodian
+illustrates in his new book, Hayek’s Bastards, the technofascist movement is
+part of a wider landscape.
+Slobodian challenges the idea that the populist alt-right – exemplified by the
+former Trump adviser Steve Bannon and Alternative für Deutschland (AfD) in
+Germany – represents a break from the more conventional neoliberalist
+capitalism of Margaret Thatcher and Ronald Reagan. On the contrary, he says,
+the current obsession of the far right with immigration and race, and its
+determination to dismantle democratic norms, have always been themes for
+champions of the free market: “Many contemporary iterations of the Far Right
+emerged within neoliberalism, not in opposition to it.”
+The last common ancestor of these lineages, as biologists might put it, was
+Thatcher’s idol, the Austrian economist Friedrich von Hayek (1899–1992),
+author of an influential defence of capitalism, The Road to Serfdom (1944).
+That book was a response to totalitarianism, especially to Soviet-style
+centralized planning. So, while Hayek’s belief in the optimizing agency of
+unfettered free markets looks naive today, it should be appraised in the light of
+what it was ranged against. The thinking of the Austrian school of economics,
+championed by Hayek and his mentor Ludwig von Mises (1881–1973), was
+central to the Chicago school spearheaded by Milton Friedman (1912–2006),
+who advised Reagan and Thatcher and won an “economics Nobel” (the
+Sveriges Riksbank prize) for work that became a part of mainstream “rational
+expectations” theory, in which agents are assumed to make rational, unbiased
+decisions about the future based on all available evidence – a situation more
+attractive because it is mathematically tractable than because it describes
+reality.
+For Slobodian, Hayek’s “bastards” are those who seized these ideas and turned
+them into a pseudoscientific libertarianism mired in racism, supremacism,
+eugenics and disdain for taxation, regulation and indeed democracy. They
+include Charles Murray, the F. A. Hayek Chair Emeritus at the right-wing
+American Enterprise Institute, who argued in The Bell Curve (1994) that Black
+people have lower average intelligence than whites; the American libertarian
+economist Murray Rothbard (1926–95), associated with the Austrian school,
+who opposed the civil rights movement; and Rothbard’s protégé Hans-
+Hermann Hoppe – the author of, among other things, Democracy: The god that
+failed (2001) – to whom Slobodian attributes a “rhetoric of violent suppression
+of difference and program of racialized secession [that] has been embraced by
+the alt-right”.
+As the author argues, such figures didn’t so much corrupt Hayek’s mainstream
+neoliberalism as pursue it to its natural conclusion. A problem for advocates of
+wholly free markets is that they seem to demand free movement of people, for
+how else can corporations acquire the best employees? But Hayek’s view, and
+Mises’s too, was that human nature was just too intolerant of cultural
+differences to make unfettered immigration viable – a position Hayek
+supported with an increasingly biologized version of his economic thought.
+This Hayekian stance has been echoed by the British-born financial journalist
+Peter Brimelow, who argues that “ethnic and cultural coherence” is a
+precondition for the efficiency of free markets.
+Brimelow, who founded the anti-immigration website VDARE, exemplifies how
+such rhetoric can easily move from “immigration harms the market” to “not all
+cultures and races are equally economically productive anyway”. After all,
+hadn’t Mises himself written that “it may be assumed that races do differ in
+intelligence and will power, and that, this being so, they are very unequal in
+their ability to form society”? In his columns for the Financial Post, Brimelow
+has floated the “provocative” idea that some non-white groups are indeed
+innately intellectually inferior; in his book Alien Nation (1995), he called
+affirmative action programmes “government-mandated discrimination against
+white Americans”.
+Charles Murray and others euphemize such ideas about racial intellectual
+differences being inscribed in genetics as “human diversity”: in this view, not
+only are humans not all equal in capacities, but these differences are
+systematic between specific populations. Slobodian unveils the deep
+connections between free-market libertarians and the network of “race
+scientists” who have long misrepresented and misunderstood scientific
+research to argue for fixed and immutable differences in ability and
+intelligence, not just between races, but also between sexes and classes. (To be
+clear: the science implies nothing of the sort.) At its darkest, this faction draws
+on dystopian fantasies in which western civilization is overwhelmed by the
+mass immigration of non-whites, as depicted in the French writer Jean
+Raspail’s novel The Camp of the Saints (1974). Allegedly an inspiration to
+Bannon, Raspail’s book foreshadowed the Great Replacement theory of the altright,
+according to which white populations are being steadily outnumbered by
+subaltern immigrants, with the collusion of left-wing governments. This
+directly feeds into Trump’s rhetoric about pet-eating Haitian immigrants in
+Ohio and Mexicans who are all drug dealers and rapists.
+Here, too, we can find the origins of the Silicon Valley obsession with declining
+birth rates, and of the pronatalist movement, which implores (the right kind
+of ) people to have as many children as possible. Here is the justification for the
+pseudoscientific genetic screening of IVF embryos for high intelligence and the
+enthusiasm for other forms of eugenics among populists in the US and Europe.
+All this lays false claim to the authority of science, freighted with the
+apocalypticism described by Becker.
+While Hayek favoured converting the intellectual elites to his views, his
+“bastards”, argues Slobodian, have pushed a different tactic: as Rothbard put
+it, rousing “the masses of people against the elites that are looting them … and
+oppressing them”. Advising the hard-right Republican presidential candidate
+Pat Buchanan in 1995, Rothbard wrote, “This is a revolution of white Euromales
+and Pat needs to focus on their grievances and concerns”. Two decades
+later, following Trump’s first victory, Jeff Deist, a former president of the Mises
+Institute, argued that the job for libertarians was “to turn the nation’s
+contempt for politicians into contempt for politics itself”. Another nine years
+on, the fruits of all this thinking are plain to see.
+Such alt-right tropes are certainly a bastardization of Hayek and the Austrian
+school. But Slobodian goes on to show how some of Hayek’s core ideas have
+provided inspiration for several far-right leaders today, including the AfD’s
+leader, Alice Weidel (a member of Germany’s Friedrich A. Hayek Society until
+2021) and the AfD politician and climate-change denier Peter Boehringer (who
+remains a member of the society today). This is not mere guilt by association,
+for Hayek and Mises expressed views on the supremacy of the West, on
+immigration, on social policy and on human biology that prefigure the more
+extreme pronouncements regularly voiced by today’s alt-right.
+Speaking in 1984 at the Heritage Foundation, a hard-right American think tank,
+Hayek said, “the truth of morals is … that of the Christian West, which has
+created morals in modern civilization”. He considered social justice “atavistic”,
+an indulgence that a self-sustaining world population could ill afford. He
+convened the meeting in 1947 that led to the formation of the Mont Pelerin
+Society (MPS), a group of influential free marketeers within which “race
+science” has long found a welcome home. Slobodian refers to a meeting in
+Gstaad in 1972 that followed that of the MPS nearby, at which “most of those
+presenting were MPS members. Each held forth on their own variation of why
+equality was a destructive fantasy. Many appealed to genetics and race”.
+Fourteen years later, the MPS’s leader, James Buchanan, spoke of “persons and
+groups [pulled] toward behaviour … that is dictated by hard wired elements in
+their nature”. Slobodian also documents the influence of the psychologist
+Richard Lynn, a central figure in “race science”, on various members of the
+MPS. Elsewhere, Llewellyn Rockwell, the director of the Mises Institute in
+Alabama and a key figure in the intellectual foundations of the alt-right, has
+argued that immigrants should not be able to gain citizenship or access public
+services. He was chief of staff to the hard-right Congressman Ron Paul, whose
+“investment” newsletter, which Rockwell edited, regularly expressed sympathy
+for right-wing militias and antipathy to Black and gay people.
+Time and again, we see how Becker’s critique of Silicon Valley’s
+technofantasies and Slobodian’s historical survey of the economic roots of the
+alt-right intersect. They are both clearly present, for example, in ultralibertarians
+such as Thiel, who has close ties with the Trump administration,
+and Andreessen, whose “Techno-Optimist Manifesto” contains a staunchly
+Hayekian defence of free markets, claiming that “central economic planning …
+drags everyone down”, and who places Hayek among his “patron saints”. Both
+books cite the Silicon Valley influencer and software developer Curtis Yarvin,
+who, Becker claims, is close to J. D. Vance, and who has argued for the
+disenfranchisement of anyone with an IQ below 120 in South Africa. He has
+also written that “there needs to be a fence between me and all populations of
+wild hominids”.
+As Naomi Klein and Astra Taylor recently argued, racialized economic
+libertarianism and technological utopias are twin facets of an “end of times
+fascism”, the adherents of which “dream of splintering governments and
+carving up the world into hyper-capitalist, democracy-free havens under the
+sole control of the supremely wealthy, protected by private mercenaries,
+serviced by AI robots and financed by cryptocurrencies” (see the Guardian,
+April 13, 2025). And if this sounds like a dystopian conspiracy in its own right, it
+is worth remembering that our current world until recently included a tech
+baron at the heart of the US government who is currently trying to multiply his
+offspring “to reach legion-level before the apocalypse”. “The governing
+ideology of the far right in our age of escalating disasters has become a
+monstrous, supremacist survivalism”, say Klein and Taylor. Trump is merely
+their useful – if unpredictable – idiot. And while mainstream political pundits
+solemnly intone that his administration is not the Fourth Reich, they seem
+incapable of imagining that fascism can take forms very different from those of
+the mid- twentieth century, while being potentially no less devastating.
+Phili p Ball is a science writer. His most recent book is How Life Works, 2024

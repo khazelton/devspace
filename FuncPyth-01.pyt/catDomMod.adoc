@@ -1,0 +1,19 @@
+=== catDomMod.adoc 
+
+- - -
+_2025-05-31 18:04:31 carryover from julia dom mod_
+
+Functional Domain Models: Composable Functions and Category Theory
+	
+	*Exploring the benefits and limitations of domain models built from chainable functional components*
+	
+	Inspired by the work of:
+	- **Owen Lynch** & **Evan Patterson** variouss articles
+	- **Bartosz Milewski** Category Theory for Programmers
+
+	
+	## Introduction
+	
+	Using modern functional python, Explore how category theory and functional programming principles can be applied to domain modeling through composable functions. Examine how category theory concepts in functional python can be used to create domain models based on pure functions where B, the output data type of function f() matches the input data type B of function (g) such that
+	
+     `f: A → B` and `g: B → C` can compose to `g ∘ f: A → C`

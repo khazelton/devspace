@@ -1,0 +1,5 @@
+vscodeHowto.adoc
+
+- - -
+_2025-06-02 15:29:48 Workspaces save all code tabs and one click opens them all again_
+

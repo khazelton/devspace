@@ -1,0 +1,400 @@
+# julPg.
+using Pkg
+Pkg.add("DotEnv")
+using DotEnv
+Pkg.add("Plots")
+using Plots
+Pkg.add("Toolips")
+using Toolips
+Pkg.add("ToolipsSession")
+using ToolipsSession
+Pkg.add("Compat")
+using Compat
+Pkg.add("LibPQ")
+using LibPQ
+Pkg.add("Tables")
+using Tables
+Pkg.add("DataFrames")
+using DataFrames
+
+# ===== FUNCTIONAL PROGRAMMING CONCEPT: Immutable Configuration =====
+
+# Using `const` with NamedTuple creates an immutable data structure
+# This follows the FP principle of avoiding mutable state
+# Similar to: 
+#   - Haskell: data Config = Config { host :: String, ... }
+#   - TypeScript: readonly interface DbConfig { ... }
+#   - Python: @dataclass(frozen=True) class DbConfig: ...
+#
+
+# ===== FUNCTIONAL PROGRAMMING CONCEPT: Encapsulated State =====
+
+# While mutable, the ConnectionPool encapsulates state changes
+# This is similar to the State monad in Haskell or atoms in Clojure
+mutable struct ConnectionPool
+    connections::Vector{LibPQ.Connection}
+    available::Vector{Bool}
+    max_connections::Int
+end
+
+# ===== FUNCTIONAL PROGRAMMING CONCEPT: Pure Function with Side Effects =====
+
+# This function has side effects (creating connections) but returns
+# a predictable result given the same inputs
+# In pure FP languages, this would be wrapped in IO monad
+function init_pool(config; max_connections=10)
+    connections = LibPQ.Connection[]
+    available = Bool[]
+    
+    # Using list comprehension would be more functional:
+    connections = [LibPQ.Connection(conn_string) for i in 1:max_connections]
+
+
+    #for i in 1:max_connections
+    #    conn_string = "host=$(config.host) port=$(config.port) dbname=$(config.dbname) " *
+    #                  "user=$(config.user) password=$(config.password)"
+    #    push!(connections, LibPQ.Connection(conn_string))
+    #    push!(available, true)
+    #end
+    
+    ConnectionPool(connections, available, max_connections)
+end
+
+# ===== FUNCTIONAL PROGRAMMING CONCEPT: Partial Application =====
+
+# These functions could be curried for partial application
+# get_connection :: Pool -> (Connection, Index)
+
+function get_connection(pool::ConnectionPool)
+    # `findfirst` is a higher-order function that takes a predicate
+    # Similar to: filter(id, pool.available)[0] in Python
+    #            find id pool.available in Haskell
+    idx = findfirst(pool.available)
+    if idx === nothing
+        error("No available connections in pool")
+    end
+    pool.available[idx] = false
+    return pool.connections[idx], idx
+end
+
+
+function return_connection(pool::ConnectionPool, idx::Int)
+    pool.available[idx] = true
+end
+
+# ===== FUNCTIONAL PROGRAMMING CONCEPT: Higher-Order Function =====
+
+# This is a classic HOF pattern - takes a function and applies it with resource management
+# Similar patterns:
+#   - Haskell: bracket :: IO a -> (a -> IO b) -> (a -> IO c) -> IO c
+#   - Python: with statement (context manager)
+#   - TypeScript: async function withResource<T>(resource, fn: (r) => T): T
+#   - Clojure: (with-open [conn (get-connection)] ...)
+function with_connection(f::Function, pool::ConnectionPool)
+    conn, idx = get_connection(pool)
+    try
+        # Apply the function to the connection
+        return f(conn)
+    finally
+        # Ensure cleanup happens regardless of success/failure
+        return_connection(pool, idx)
+    end
+end
+
+# Initialize global connection pool
+# In pure FP, this would be passed as a parameter to avoid global state
+const POOL = init_pool(DB_CONFIG)
+
+# ===== FUNCTIONAL PROGRAMMING CONCEPT: Side-Effect Function =====
+
+# Database setup is inherently side-effectful
+# In Haskell, this would return IO ()
+function setup_database()
+    # Using HOF to manage the connection lifecycle
+    with_connection(POOL) do conn
+        # Anonymous function (lambda) passed to with_connection
+        execute(conn, """
+            CREATE TABLE IF NOT EXISTS users (
+                id SERIAL PRIMARY KEY,
+                username VARCHAR(100) UNIQUE NOT NULL,
+                email VARCHAR(255) NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+        
+        execute(conn, """
+            CREATE TABLE IF NOT EXISTS posts (
+                id SERIAL PRIMARY KEY,
+                user_id INTEGER REFERENCES users(id),
+                title VARCHAR(255) NOT NULL,
+                content TEXT,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+    end
+end
+
+# ===== FUNCTIONAL PROGRAMMING CONCEPT: Function as Values (First-Class Functions) =====
+
+# These are lambda expressions assigned to variables
+# Demonstrates functions as first-class citizens
+# Similar to:
+#   - Haskell: queryUsers = \conn -> ...
+#   - TypeScript: const queryUsers = (conn) => ...
+#   - Python: query_users = lambda conn: ...
+query_users = conn -> DataFrame(execute(conn, "SELECT * FROM users ORDER BY created_at DESC"))
+query_posts = conn -> DataFrame(execute(conn, "SELECT * FROM posts ORDER BY created_at DESC"))
+
+# ===== FUNCTIONAL PROGRAMMING CONCEPT: Pure Functions with Parameters =====
+
+# These functions are "pure" in terms of their database operations
+# Given the same inputs, they produce the same SQL commands
+function create_user(conn, username::String, email::String)
+    execute(conn, """
+        INSERT INTO users (username, email) 
+        VALUES (\$1, \$2) 
+        RETURNING id, username, email, created_at
+    """, (username, email))
+end
+
+function create_post(conn, user_id::Int, title::String, content::String)
+    execute(conn, """
+        INSERT INTO posts (user_id, title, content) 
+        VALUES (\$1, \$2, \$3)
+        RETURNING id, title, content, created_at
+    """, (user_id, title, content))
+end
+
+# ===== FUNCTIONAL PROGRAMMING CONCEPT: Function Composition in HTML Generation =====
+
+# The nested `do` blocks demonstrate function composition
+# Each `h` function returns a component, and `do` blocks create anonymous functions
+function main_route(c::Connection)
+    # This is essentially composing HTML builder functions
+    # Similar to JSX in React or Blaze in Haskell
+    page = h("html") do
+        h("head") do
+            h("title", text="Toolips PostgreSQL App")
+            h("style", text="""
+                body { font-family: Arial, sans-serif; margin: 20px; }
+                .container { max-width: 800px; margin: 0 auto; }
+                table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+                th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+                th { background-color: #f2f2f2; }
+                form { margin: 20px 0; }
+                input, textarea { margin: 5px 0; padding: 5px; width: 100%; }
+                button { background-color: #4CAF50; color: white; padding: 10px; border: none; cursor: pointer; }
+                button:hover { background-color: #45a049; }
+            """)
+        end
+        
+        h("body") do
+            h("div", class="container") do
+                h("h1", text="Toolips PostgreSQL Demo")
+                
+                # ===== FUNCTIONAL PATTERN: Declarative UI =====
+                # HTML is built declaratively, not imperatively
+                h("h2", text="Create User")
+                h("form", action="/create-user", method="POST") do
+                    h("input", type="text", name="username", placeholder="Username", required="true")
+                    h("input", type="email", name="email", placeholder="Email", required="true")
+                    h("button", type="submit", text="Create User")
+                end
+                
+                h("h2", text="Users")
+                # ===== FUNCTIONAL PATTERN: HOF for Resource Management =====
+                with_connection(POOL) do conn
+                    users = query_users(conn)
+                    if nrow(users) > 0
+                        h("table") do
+                            h("tr") do
+                                h("th", text="ID")
+                                h("th", text="Username")
+                                h("th", text="Email")
+                                h("th", text="Created At")
+                            end
+                            # ===== FUNCTIONAL PATTERN: Map/Iteration =====
+                            # `eachrow` creates an iterator - lazy evaluation
+                            # Similar to: map renderRow users in Haskell
+                            for row in eachrow(users)
+                                h("tr") do
+                                    h("td", text=string(row.id))
+                                    h("td", text=row.username)
+                                    h("td", text=row.email)
+                                    h("td", text=string(row.created_at))
+                                end
+                            end
+                        end
+                    else
+                        h("p", text="No users yet.")
+                    end
+                end
+                
+                h("h2", text="Create Post")
+                h("form", action="/create-post", method="POST") do
+                    h("input", type="number", name="user_id", placeholder="User ID", required="true")
+                    h("input", type="text", name="title", placeholder="Title", required="true")
+                    h("textarea", name="content", placeholder="Content", rows="5")
+                    h("button", type="submit", text="Create Post")
+                end
+                
+                h("h2", text="Posts")
+                with_connection(POOL) do conn
+                    posts = query_posts(conn)
+                    if nrow(posts) > 0
+                        h("table") do
+                            h("tr") do
+                                h("th", text="ID")
+                                h("th", text="User ID")
+                                h("th", text="Title")
+                                h("th", text="Content")
+                                h("th", text="Created At")
+                            end
+                            for row in eachrow(posts)
+                                h("tr") do
+                                    h("td", text=string(row.id))
+                                    h("td", text=string(row.user_id))
+                                    h("td", text=row.title)
+                                    h("td", text=row.content)
+                                    h("td", text=string(row.created_at))
+                                end
+                            end
+                        end
+                    else
+                        h("p", text="No posts yet.")
+                    end
+                end
+            end
+        end
+    end
+    
+    write!(c, page)
+end
+
+# ===== FUNCTIONAL PROGRAMMING CONCEPT: Pure Data Transformation =====
+
+function create_user_route(c::Connection)
+    # Extract data using `get` with default values - defensive programming
+    username = get(c.data, "username", [""])[1]
+    email = get(c.data, "email", [""])[1]
+    
+    # Guard clause pattern - early return for invalid inputs
+    if !isempty(username) && !isempty(email)
+        try
+            with_connection(POOL) do conn
+                create_user(conn, username, email)
+            end
+        catch e
+            # Error handling without mutation
+            write!(c, "<h1>Error creating user: $(e)</h1><a href='/'>Go back</a>")
+            return
+        end
+    end
+    
+    # Immutable response pattern
+    c.http.status = 302
+    push!(c.http.headers, "Location" => "/")
+    write!(c, "")
+end
+
+function create_post_route(c::Connection)
+    # ===== FUNCTIONAL PATTERN: Safe Parsing with Maybe/Option Pattern =====
+
+    # tryparse returns nothing (like Maybe/Option in Haskell/Rust)
+    user_id = tryparse(Int, get(c.data, "user_id", ["0"])[1])
+    title = get(c.data, "title", [""])[1]
+    content = get(c.data, "content", [""])[1]
+    
+    # Pattern matching on Maybe-like value
+    if user_id !== nothing && user_id > 0 && !isempty(title)
+        try
+            with_connection(POOL) do conn
+                create_post(conn, user_id, title, content)
+            end
+        catch e
+            write!(c, "<h1>Error creating post: $(e)</h1><a href='/'>Go back</a>")
+            return
+        end
+    end
+    
+    c.http.status = 302
+    push!(c.http.headers, "Location" => "/")
+    write!(c, "")
+end
+
+# ===== FUNCTIONAL PROGRAMMING CONCEPT: Function Composition =====
+
+function api_route(c::Connection)
+    # ===== FUNCTIONAL PATTERN: Function Composition =====
+    # Creates a new function by composing smaller functions
+    # Similar to:
+    #   - Haskell: fetchAllData = liftA2 (,) queryUsers queryPosts
+    #   - TypeScript: const fetchAllData = pipe(queryUsers, queryPosts)
+    fetch_all_data = conn -> (
+        users = query_users(conn),
+        posts = query_posts(conn)
+    )
+    
+    # Apply the composed function
+    data = with_connection(POOL) do conn
+        fetch_all_data(conn)
+    end
+    
+    # ===== FUNCTIONAL PATTERN: List Comprehension =====
+
+    # Transform data using comprehensions - functional alternative to loops
+    # Similar to:
+    #   - Haskell: [User{..} | row <- users]
+    #   - Python: [{"id": row.id, ...} for row in data.users]
+    response = Dict(
+        "users" => [Dict("id" => row.id, "username" => row.username, 
+                        "email" => row.email, "created_at" => string(row.created_at)) 
+                   for row in eachrow(data.users)],
+        "posts" => [Dict("id" => row.id, "user_id" => row.user_id,
+                        "title" => row.title, "content" => row.content,
+                        "created_at" => string(row.created_at))
+                   for row in eachrow(data.posts)]
+    )
+    
+    c.http.headers["Content-Type"] = "application/json"
+    write!(c, string(response))
+end
+
+# Initialize database
+setup_database()
+
+# ===== FUNCTIONAL PROGRAMMING CONCEPT: Data as Configuration =====
+
+# Routes defined as data structures, not imperative code
+# This is declarative routing - similar to:
+#   - Haskell Servant: type API = "users" :> Get '[JSON] [User]
+#   - Clojure Compojure: (defroutes app (GET "/" [] main-handler))
+routes = [
+    Route("/", main_route),
+    Route("/create-user", create_user_route, method="POST"),
+    Route("/create-post", create_post_route, method="POST"),
+    Route("/api", api_route)
+]
+
+# ===== FUNCTIONAL PROGRAMMING CONCEPT: Declarative Server Configuration =====
+
+# Server configuration through data, not imperative setup
+ws = WebServer("127.0.0.1", 8006, routes=routes, extensions=[Session()])
+
+println("Starting Toolips PostgreSQL app on http://127.0.0.1:8006")
+println("API endpoint available at http://127.0.0.1:8006/api")
+ws.start()
+
+# ===== FUNCTIONAL PROGRAMMING PRINCIPLES DEMONSTRATED =====
+
+# 1. Immutability: const DB_CONFIG, route definitions
+# 2. Higher-Order Functions: with_connection, map operations
+# 3. Function Composition: HTML builders, fetch_all_data
+# 4. First-Class Functions: query_users, query_posts as values
+# 5. Declarative Style: Route configuration, HTML generation
+# 6. Pure Functions: Most query builders and transformations
+# 7. Lazy Evaluation: eachrow iterators
+# 8. Pattern Matching: tryparse with nothing checks
+# 9. Referential Transparency: Configuration and route definitions
+# 10. Side Effect Management: Isolated in with_connection blocks
+

@@ -1,0 +1,218 @@
+bench.adoc 
+
+MATCH (r:Person {Id='1'}) MATCH (s:Person {Id='m'}) MERGE (r)->[:CONNECTED_WITH]->(m) 
+
+MATCH (a:Person)-[r:CONNECTED_WITH]->(b:Person) return a,r,b
+  [As a graph]  pix/yarvBap.png
+  
+Modified conn.py to use template "CREATE (p1)-[:CONNECTED_TO]->(p{m});" with an integer value m, starting at 1 and incrementing with each line. write out to the file conn.adoc
+
+
+generate_connection_statements:31. The
+  script will now generate bidirectional connection statements.
+
+create conn.py to read the first 15 lines of cr.cypher,  replacing {m} in the followint expression "CREATE (p1:)-[:CONNECTED_TO]->(p{m});" with an integer value starting at 1 and incrementing with each line. write out to the file conn.adoc
+
+MATCH (p1:),(t:Text)
+  WHERE k.textid = t.id
+CREATE (k)-[:IS_IN]->(t);
+
+CREATE (p1)<-[:CONNECTED_TO]->(p{m});
+
+- - -
+modify cr.py to create an integer variable m initialized to 1 and increasing by 1 for each line processed, then iterate over the lines in a file yarvinPeeps.adoc, read the text in each line and insert the value of m in place of {m} and the value of text in place of {n} in the text string 'CREATE (p{m}:Person { Name: "{n}" })', then output results to a file cr.cypher
+
+modify cr.py to create an integer variable m starting with 1 and increasing by 1 for each line processed, then iterate over the lines in a file yarvinPeeps.adoc, read the text in each line and insert the value of m in place of {m} and the value of text in place of {n} in the text string 'CREATE (p{m}:Person { Name: "{n}" })', then output results to a file cr.cypher
+
+Find all person names contained in this article, https://www.politico.com/news/magazine/2023/07/16/bronze-age-pervert-masculinity-00105427. output one      │
+name per line to bap.adoc
+
+How Bronze Age Pervert Built an Online Following and Injected Anti-Democracy, Pro-Men Ideas Into the GOP
+
+A modern story of shitposting, self-publishing and how an anonymous persona can help your ideas take off — and take root at the highest levels.
+Illustration of a muscular male torso statue. A feather pen in an inkwell and a hand weight sit in front. A figure sitting in front of a flickering computer screen sits in the middle.
+
+Animation by @eoinryanart for POLITICO
+
+By Rosie Gray
+
+07/16/2023 07:00 AM EDT
+
+Rosie Gray is a journalist who has written for BuzzFeed News, The Atlantic, The New York Times, and other publications.
+
+In 2018, Costin Alamariu disappeared.
+
+There was a flurry of activity in October, when Alamariu, a Romanian-American writer with a Ph.D. from Yale, published an article: “Jair Bolsonaro And The Populist Crisis in Brazil” in Palladium Magazine, an online journal that was associated with the anti-democracy, pro-authoritarian “neo-reaction” movement. Alamariu announced on Twitter he was restarting his account — though it’s unclear when or if he posted on the account previously, as no earlier posts are visible — and tagged far-right figures like Steve Sailer and Ann Coulter. “hi Steve I closed my account before but reopened to post some new articles. Hope you follow back! You might be interested in this one about Brazil,” he wrote to Sailer.
+
+But on Oct. 30, he suddenly stopped tweeting. He hasn’t posted since then from that account. He hasn’t published any work since then, nor has he held a job with any public profile. As far as the general public is concerned, Alamariu no longer exists.
+
+But as Alamariu was disappearing, another figure looking to make a name in conservative circles was on the rise. Twenty-eighteen was also the year that Bronze Age Pervert, BAP for short, became a household name in far-right spaces. That June, BAP, who had already built a small but loyal following online, tweeting from his account featuring a profile picture of a shirtless, well-built man photographed from behind, self-published his book Bronze Age Mindset, a curious mix of philosophical analysis, polemic and lifestyle advice all in the service of the argument that embracing one’s authentic masculine virtue is the only way to conquer “lower types of mankind” and root out the worst parts of democracy. (A sampling: “It goes without saying that you must lift weights”; women’s liberation infected society with a “terminal disease”; readers should prepare for impending — and in BAP’s view, desirable — military rule in Western countries.)
+
+The book did surprisingly well for a self-published work and reached as high as No. 3 on the Ancient Greek History chart on Amazon. It was a word-of-mouth phenomenon, slowly gaining more and more fans, including, reportedly, a number of Donald Trump staffers. Their number is hard to gauge, though BAP today boasts more than 100,000 followers on Twitter.
+
+BAP has become a key figure in the world of conservative masculinity influencers, which includes figures ranging from YouTube guru Jordan Peterson to TikTok personality and accused rapist and human trafficker Andrew Tate. Over the past several years, this universe has gained followers and proven itself to be a reliable channel to conservative ideas and Republican politicians for young men in particular. It has also been a breeding ground for reactionary political ideas.
+
+Of all such figures on the scene today, including clearly BAP-influenced anonymous accounts with names like Delicious Tacos, Raw Egg Nationalist and Zero HP Lovecraft, BAP stands out as one of the most influential — and the one associated with the most clearly articulated and far-reaching political and cultural vision. Further, that vision is an extreme one, built around a rejection of equality, democracy and other promises of modern liberalism — and it’s being taken seriously by prominent conservatives and Republicans.
+
+BAP counts Michael Anton, former White House national security spokesperson, Darren Beattie, a former Trump White House aide who was fired for speaking at a white nationalist conference, and a number of young former Trump staffers among his readers. A review by Anton for the conservative think tank the Claremont Institute said the book speaks directly to a “youthful dissatisfaction (especially among white males) with equality as propagandized and imposed in our day.” In the years since the book came out, BAP has only grown in popularity, even despite being banned from Twitter for a period until late last year. In a speech earlier this year, Peter Thiel said that while he found BAP’s solutions to modern problems “tempting,” he disagreed with his “distortions to the Judeo-Christian tradition.” Republican Ohio Sen. J.D. Vance follows BAP on Twitter.
+THE MASCULINITY ISSUE
+
+The Crisis Over American Manhood Is Really Code for Something Else | By Virginia Heffernan
+
+Democrats and Republicans Agree Men Are in Trouble. They Disagree on What to Do About It. | By Katie Fossett
+
+Portrait of the Modern American Man — In Nurse’s Scrubs | By Kathy Gilsinan
+
+How Bronze Age Pervert Built a Twitter Following and Injected Anti-Democracy, Pro-Men Ideas into the GOP | By Rosie Gray
+
+Democrats Have a Man Problem. These Experts Have Ideas for Fixing It.
+
+According to several outlets, the person behind the online persona is none other than Alamariu. Alamariu has never confirmed this. He hasn’t responded to messages and letters sent to his various physical and digital addresses — those of both BAP and Alamariu. But there is little doubt about the connection. Nor is there much doubt about the value that anonymity has given to his rise in the noisy and increasingly influential arena of masculine identity politics, allowing him freedom to express controversial ideas without having to answer for them. Because how can you hold a disembodied Twitter profile accountable?
+MOST READ
+white-house-59384.jpg
+
+    ‘Trump time’ becomes a liability for president’s tariff agenda
+    ‘A historic betrayal’: Murkowski slams Trump administration revoking protections for Afghan immigrants
+    Trump administration to prioritize ‘patriotic Americans’ for federal jobs
+    ‘Completely Unworkable’: Sculpture Experts Say Trump’s $34 Million Statue Garden Has Major Problems
+    ‘It can happen to anyone': Nadler rebukes DHS after staffer detained in Manhattan office
+
+“When you’re on the internet, a way of getting internet fame by having extreme views is doing so consistently, authentically and playing a role,” Danielle Lee Tomson, a writer and researcher who wrote her Ph.D. dissertation on conservative influencers. She compared the way BAP operates to “performance art” and to kayfabe, the concept in professional wrestling of acting out stories and characters to heighten the drama of staged fights.
+
+BAP, Tomson said, resembles folkloric “tricksters” who “are willing to push the boundaries of polite discourse by creating a mythic character of their own, [which] you can’t do as a normal human being.”
+
+Alamariu’s transformation from a contrarian academic to transgressive internet sensation and idol of the new right is a story of the special allure that a provocative pseudonym holds, and how it can help launch a modern media celebrity — and spread extreme ideas further than they would otherwise go.
+
+The Trump campaign and the early years of his administration triggered widespread condemnation of the president and his supporters by liberals and anti-Trump conservatives alike. Many conservatives, especially those who were extremely online, saw in this new atmosphere an overly censorious culture that too quickly canceled those who disagreed with the dominant liberal line; many of them felt an irresistible temptation to trigger shock, or, as they might call it, own the libs. “I literally just hate liberals. I don’t have any other politics,” went one viral 2020 post on 4chan, the freewheeling online forum that has played an important role in the spread of far-right ideology in recent years. BAP, a far-right, totally fringe, completely based “anon,” with a “shitposter” flair, met the moment perfectly.
+
+Written in his signature slang (“wat means?” “ghey” instead of gay, “gril” for girl), Bronze Age Mindset was BAP’s salvo against contemporary society and liberal pieties. BAP joined a chorus of “trad” voices — short for traditional — gaining traction online who deplored modern society’s emptiness and the replacement of traditional values with progressive ones.
+
+Where BAP differs from many trads is in his veneration of values that have nothing to do with Christian concepts of family or morality. In the book, BAP argues that modern society should take after Ancient Greece, when beauty, strength and courage were prized above all else. In particular, BAP prizes the classical conception of masculinity and wants modern men to emulate it. The key relationship that gave a society its strength in civilizations like Ancient Greece, BAP argues, was not that between men and women, or within families, but between young men who perform great deeds together. In BAP’s ideal world, these male friendships should be a young man’s focus. In his telling, modern society wants to weaken these masculine bonds because of their threat to the established order; “every great thing in the past was done through friendships between two men, or brotherhoods of men, and this includes all great political things, all acts of political freedom and power,” he writes in Bronze Age Mindset.
+
+For BAP, the elevation of this vision of masculinity in society comports with his ideal social order, where the strongest rule — and there are no curbs on their dominance, no efforts to protect those who have less power and certainly no attempt to equalize groups. BAP believes in natural differences between humans along racial, ethnic and gender lines, and compares non-Western societies to “yeast” mindlessly perpetuating themselves. BAP argues that equality itself, even democracy, is a dead end, and he believes in eugenic breeding to preserve what he views as superior stock. “I believe in Fascism or ‘something worse’ and I can say so unambiguously because, unlike others, I have given up long ago all hope of being part of the respectable world or winning a respectable audience,” BAP wrote in a 2021 essay. “I have said for a long time that I believe in rule by a military caste of men who would be able to guide society toward a morality of eugenics.”
+
+Anton received the book as a gift from the writer Curtis Yarvin, aka Mencius Moldbug, an influential neo-monarchist blogger well-connected in “national conservative” and tech libertarian circles. Anton’s review of the book in the Claremont Review of Books, about a year after it was released, was mixed but respectful, and portrayed BAP as an important new alternative to mainstream conservatism, which had lost credibility with a younger generation. Around the time of the review, POLITICO reported that the book was getting passed around by young Trump staffers.
+Michael Anton stands in a press briefing room next to a screen that says The White House.
+
+Michael Anton (pictured above), former White House national security spokesperson, was one of many Bronze Age Pervert readers in the Trump White House. | Carolyn Kaster/AP
+
+On the surface, Bronze Age Mindset doesn’t appear to have much to do with the project of mainstream conservatism. And BAP’s goals are pretty niche; most people wouldn’t want bands of pirates in charge, which is what he proposes as an ideal form of government.
+
+But BAP’s critique of society aligns with an increasingly prevalent view on the right. Conservatives have become more and more preoccupied with liberals’ emphasis on diversity and equity. Big-name politicians campaign against “wokeness.” On the lowbrow side, this translates to Fox News culture war bait via sources like Libs of TikTok, a Twitter account that mocks liberal and LGBTQ social media users; on the highbrow end, intellectuals argue that society has become warped and decadent because it has been rebuilt around the desires, particularly of women and minorities, for equality.
+
+And BAP’s ideas about masculinity, though expressed in an esoteric and eccentric way, reflect modern conservative handwringing about the role of men. Illustrating how BAP’s and other masculinity gurus’ ideas prefigured and seeped into flagship conservative thinking was Tucker Carlson’s 2022 documentary “The End of Men,” which argued American males have been physically and politically emasculated in a world that has become hostile to masculinity and need to recover their own inner strongmen.
+
+Much of what BAP has to say is too rich for the blood of most conservatives who aspire to mainstream respectability. But BAP’s basic diagnosis of the problem isn’t so far off from what conservatives have been hearing for years from more mainstream sources, including powerful figures on the right like Thiel, who said in 2009, “I no longer believe that freedom and democracy are compatible.”
+
+As influential as BAP is, there has long been an air of mystery about who he really is. The real person behind the persona has been identified as Alamariu — a fact that has long been known in far-right circles. He has also been identified multiple times in articles and podcasts and was the subject of a “dox” (outing) three years ago that caused a great deal of infighting in online right spaces. BAP has never denied being Alamariu, nor has he confirmed it, though he implicitly acknowledged the dox on Twitter by boasting about women who were calling him attractive based on a photo of Alamariu that was going around. It’s unclear where exactly Alamariu lives, or how he makes money, though he charges five dollars a month for subscriptions to his podcast “Caribbean Rhythms.” Alamariu didn’t respond to multiple requests for interviews.
+
+But from the details that can be gleaned, it’s possible to understand more about how he was formed.
+
+Alamariu was born in Romania in 1980. At age 10, according to a bio on one of his author pages, he immigrated to the United States with his family. His father was a research engineer at the Massachusetts Institute of Technology. Alamariu attended Newton South High School in the well-heeled Boston suburb of Newton. He was in the class of 1998, one year behind his classmates B.J. Novak and John Krasinski, future stars of “The Office.” UFC color commentator and podcaster Joe Rogan graduated from the same high school in 1985.
+
+The 1998 Regulus, the school’s yearbook, lists Alamariu as the yearbook’s managing editor as well as class president. In his senior photo, he’s wearing a professorial jacket and tie and staring off-camera, hands clasped behind his back. Alamariu went to MIT for undergrad, where he majored in mathematics and won a prize in his junior year for a short story titled “On Tyranny.”
+Costin Alamariu, the man behind BAP, in his high school yearbook in 1998.
+
+Costin Alamariu, the man behind BAP, in his high school yearbook in 1998. | Newton South High School
+
+After graduating, he did a master’s in philosophy at Columbia. In the Columbia Daily Spectator, Alamariu weighed in on a controversy over Israel-Palestine that erupted on Columbia’s campus in 2005. The piece shows an early disillusionment with academic politics that presages today’s “anti-woke” talking points. Referring to the Middle Eastern studies department that was the focus of the controversy, Alamariu wrote, “This department, like nearly all others of its kind at other universities and like other departments within Columbia itself, has long replaced disinterested scholarship with political activism.” “Academic multiculturalism,” he wrote, “is not a scholarly school of exegesis; it is a political movement, founded with the intent of forwarding a narrative of Western and capitalist oppression and third-world victimization.”
+
+By the following year, Alamariu had entered the political science department at Yale to work on a Ph.D. It didn’t take him long to write a letter to the editor to the Yale Daily News, excoriating the paper for left-leaning op-eds it published, including one about how Yale handled sexual assault cases on campus and another on the topic of women Yale graduates’ work-life balance. “I congratulate your paper on having advanced from incipient sexual Leninism to full-scale Maoism,” he wrote.
+
+Alamariu was mentored closely by his thesis adviser, the scholar Steven Smith, who is known as an expert on the German-Jewish-American philosopher Leo Strauss, whose midcentury works on political philosophy have been an important influence on conservative intellectuals. Alamariu’s passion was for classical political theory. He had a good command of ancient Greek. “He was a very gifted student, although [it was] clear from the beginning, eccentric in some respects, and definitely sort of followed his own drummer,” Smith told me. Smith described Alamariu as an “international man of mystery,” who “knew people, but he was not close with anyone particularly. He was a contrarian, which I liked.”
+
+“He enjoyed making a bit of a myth of himself,” said a Yale classmate of Alamariu’s, who spoke on condition of anonymity due to fear of professional repercussions. “And he plays up his accent a little bit.” The former classmate described learning about Alamariu’s podcast as Bronze Age Pervert through another Yale connection and being surprised to hear that Alamariu was “exaggerating [his accent] considerably.” “And I just found it so ludicrous and over the top and just bizarre and surreal to listen to him basically doing a [Slavoj] Zizek impression that I just couldn’t keep up with it.” Another surprise was BAP’s evangelism for weightlifting, since the classmate remembered him as “skinny, pale. You know, at some point, … somebody mentioned him having an apartment, [and] I asked, if it was like an abandoned elevator shaft that he hung upside down in.”
+
+Alamariu’s interest in aristocracy “was definitely there,” this person said. The classmate said that Alamariu already showed an interest in hierarchy and displayed sexism and a “strong Western cultural chauvinism” but not racism at the time. “I don’t know if this has persisted, but among the sort of national conservative set, he’s an unusual character because he was really pro-imperialism,” the person said.
+People sitting and walking along the green on the Yale University campus, with a large campus building in the background.
+
+“He enjoyed making a bit of a myth of himself,” said a Yale classmate of Alamariu’s. Alamariu began his Ph.D at Yale in 2006 and completed it in 2015. | Christopher Capozziello/Getty Images
+
+Alamariu was friendly with his cohort of young political theorists. Smith had them all in a course on Machiavelli, which was “a lot of fun,” Smith said. But he held himself somewhat apart: “No one knew where he lived. For example, he would tell me occasionally that he was living in the back of his car,” Smith said. Alamariu’s former classmate said that he fit into the grad student social scene “episodically.”
+
+“He’s a character, right? By design. You can kind of tell, he’s acting a character,” the former classmate said. “He’s the only person I’ve ever seen wear a swimsuit and a cravat at the same time.” This person said they didn’t recall knowing of any romantic relationships Alamariu had, with women or with men.
+
+As much as he stood out at times, Alamariu was still following the path of a typical academic striver, working as a teaching assistant for undergraduate classes and writing his dissertation. He at first shared Smith’s interest in Strauss and may have been particularly influenced by Strauss’ 1952 work Persecution and the Art of Writing. “Strauss’ thesis about esoteric writing, that great writers kind of hide themselves behind different masks and different devices, they don’t reveal themselves plainly and clearly to their readers — I think he was intrigued by that idea,” Smith said.
+
+Alamariu was keenly fascinated by the idea of a “warrior ethos,” Smith said, and enjoyed works of anthropology like The Golden Bough, the 19th-century study of comparative religion that posited that legends of glorious rebirth were central to mythologies across the world. He was fascinated by Yukio Mishima, the Japanese nationalist author who committed ritual seppuku in 1970 after leading a failed imperialist coup d’état, and gave Smith some of Mishima’s books. Above all, Alamariu was a Nietzschean, Smith said; “he always was drawn to Nietzsche’s ideas concerning hierarchy.” The German philosopher Friedrich Nietzsche wrote that modern culture would be run by “last men,” nihilistic people living small lives based around guarding their creature comforts; in BAP’s work, this is the role occupied by what he calls “bugmen.” Nietzsche thought the cure for the stagnation perpetuated by the last men would come in the form of the “ubermensch,” or superman, a figure far superior to the last men who would be strong enough to impose a new order.
+
+Alamariu published his dissertation in 2015. It’s titled “The Problem of Tyranny and Philosophy in the Thought of Plato and Nietzsche.” “It was a very original take, which is, you know, can be both good and bad,” said Smith. “The dissertation was, in many ways, a brilliant sort of tour de force.”
+
+Alamariu focused on one of Plato’s dialogues, the Gorgias, which includes a debate between Socrates and a philosopher named Callicles about the nature of tyranny. To make a long story short, Socrates is against; Callicles is in favor. Alamariu’s argument, of which Smith says “from what I can tell, it’s completely original to him, and with which I disagree,” was that Plato purposefully made Socrates’ anti-tyranny argument so weak that he must have intended that his audience side with Callicles’ defense of tyranny.
+
+Smith didn’t believe Alamariu’s argument was “interpretively correct,” and the two had many conversations about it, some contentious; but Alamariu stuck to his guns. After obtaining his Ph.D. at Yale in 2015, Alamariu went to Emory for a post-doctoral appointment for a year. That was the last time he worked in academia. It’s unclear exactly what happened, though doing a post-doc for a year before moving on somewhere else isn’t uncommon.
+An illustrated portrait in profile of Freidrich Nietzsche, with his head resting on his hand.
+
+Freidrich Nietzsche, shown above between 1910-1915. Above all, Alamariu was a Nietzschean, Steven Smith, his thesis adviser at Yale, said. "He always was drawn to Nietzsche’s ideas concerning hierarchy," said Smith. | Bain News Service via the Library of Congress
+
+The academic job market is cutthroat at the best of times, and perhaps even more so for conservatives — especially in the febrile atmosphere of the Trump years. “Being a right-winger in political science during the Obama years was pretty easy because history had decided we were extraneous,” Alamariu’s former classmate said. But it was different under Trump, when many liberals began to view the right as not just wrong or an oddity but actively dangerous. “Costin was always kind of a fringy character anyway,” this person said. “But certainly once the ‘oh, this is an amusing curiosity’ quality went out, I can see it not going well.”
+
+As Alamariu was building his short-lived career in academia, the Bronze Age Pervert persona was already taking shape online. An account with that name became a regular poster in 2010 — while Alamariu was in the middle of graduate studies at Yale — on anonymous Internet forums Salo and The Phora, which are now defunct. Early posts show that the ingredients for Bronze Age Pervert were already in place.
+
+On April 16, 2011, BAP, whose profile photo was a muscular young man pulling his tank top to the side to expose a hairless, defined pectoral muscle, pitched a “radical new proposal” to other Phora users.
+
+“From a eugenic point of view, we should accept and encourage the so-called ‘gay liberation’ movement,” BAP wrote. He believed, he wrote, that “it is very likely that the majority of human males are homosexual.” Furthermore, “it is better to encourage them to be so, in order that the few (2-3%) of men who are alpha by nature should impregnate most of the women. There will be social chaos and an era of destruction upon us, but human nature will benefit as the majority of men, who are homos, will no longer breed.” This proposal presages a key plank of modern BAPism: the denigration of family life and the valorization of the male “alpha.”
+
+BAP’s posts on Salo, where his profile picture was a fully nude male figure shot in black and white from behind, sometimes amount to juvenile “shitposting.” “Oboma [sic] won because i masturbated,” he posted Nov. 7, 2012. His posts show an interest in the same themes that continue to animate his career today: which men are gay and how not-gay he is, bodybuilding, genetics, nationalism, beauty, etc.
+
+They also reveal glimpses of a person who struggled with the expectation of partnership and marriage. In a post from 2015 on Salo, BAP indicates that he had left the U.S. He described seeing women from different countries in a cafe where he now lived and being taken with the beauty of the Brazilian women but disgusted by the American women, who to him were “animals” and “dog women.” “Probably the worst part of living the US is this experience of never being carried away by desire for a woman in this way, because none of them are capable of inspiring it,” BAP wrote. He was 34 at the time he wrote the post. In 2016, BAP chimed in to a Salo discussion about marriage and the advantages of “mail order brides.” “No one is worth marrying,” BAP wrote. “Marrying is inherently a bad deal for men. This is why bachelorhood was illegal in early Rome. … Marriage is a social and political institution, that men had to be coaxed in by law and by being given tremendous legal privileges (ownership of the wife and family, including often power of life and death). But even with those privileges it’s hardly worthwhile. This is why I say I would only consider marriage to a very rich woman.”
+
+That same year, Alamariu’s byline began popping up around the internet in right-leaning journals. In July 2016, he wrote a column in Taki’s Magazine, a publication known for publishing far-right and white nationalist writers like Richard Spencer and Gavin McInnes, defending Trump’s praise of Vladimir Putin. “The same international vampires who raped Russia and who hate Putin for stopping their schemes are now shaking with fear that an American can stop them at home,” he wrote.
+
+The next year, he wrote again for Taki’s about South American politics and race and wrote essays on his Medium page. In one article, Alamariu lambasted global elites’ supposed turn toward “matriarchy” and a system that favored incompetent bureaucratic functionaries comparable to historical “court eunuchs,” a class of servant in ancient history who had been castrated and, without any ability to establish their own dynasty, was thus seen as less threatening to those in power. Written shortly after Trump’s inauguration and the Women’s March, the piece argued that the march happened because privileged women “didn’t get the matriarch they believed was their due” because of a sense of entitlement they had been afforded by a corrupt elite full of “weak-minded, and therefore easily-controlled, mental and spiritual cripples.”
+
+Alamariu’s work shows a deep suspicion of democracy that ties into his views about male supremacy and hearkens back to his graduate work on tyranny. The modern meritocratic state, he argues, doesn’t work because of its focus on consensus-building and equality, which prevent real achievement and empower the weak; society functions better under the rule of leaders like Putin and Brazilian strongman Jair Bolsonaro who govern like real men, without regard for public opinion or fairness.
+
+Alamariu’s writing under his real name is sophisticated, but turgid. “The issue at hand has to do fundamentally with the fitness of the post-war liberal order — specifically the elites promoted through the educational and electoral system — to manage modern economies and modern states,” he wrote in the Bolsonaro article, echoing the argument in his 2017 Medium piece about the character of the ruling classes. In this article, Alamariu described himself as “an on-and-off resident of Rio for some years.”
+
+But if Alamariu still had one foot in mainstream respectability and polish, Bronze Age Pervert didn’t — and he was taking off because of it. Anonymity, and the creation of a strange and compelling persona, turned out to be the key to getting people to listen. The book was spreading by word of mouth, and in influential circles.
+
+Yarvin “literally held it up over his head with two hands like it was some kind of talisman,” Anton told me about when he was given the book. “He said, ‘Behold, Bronze Age Mindset.’” Anton read it also at the urging of Beattie, another former Trump White House aide. Beattie told him he needed to read it if he “really wanted to know what was going on among younger people.”
+
+Edward Luttwak, the writer of books on military strategy and history, heard from Bronze Age Pervert through intermediaries several years ago. BAP had read a 2012 essay by Luttwak in the London Review of Books about a spate of recent translations of The Iliad and what it said about the epic’s lasting appeal. Luttwak wrote that The Iliad, with its valorization of men who were braver and nobler even than the gods, “offers a vision of uncompromised human dignity which was very rare indeed over much of human history,” of “human dignity at its fullest, undiminished by piety or deference to gods or kings.” Catnip for BAP.
+
+“He has admirers, he has intense admirers who did everything to connect him to me,” Luttwak said. These, he said, were a “group of people involved in the Washington political scene” who share BAP’s Nietzschean worldview. BAP called Luttwak from Spain, Luttwak said.
+Edward Luttwak holding his glasses while posing for a portrait.
+
+Writer Edward Luttwak said BAP’s “ideology reflects a very deep interest and a sophisticated understanding of the Bronze Age.” | Basso Cannarsa/Opale via Alamy
+
+“As a classicist, he’s very serious,” Luttwak said. BAP’s “ideology reflects a very deep interest and a sophisticated understanding of the Bronze Age.” Luttwak believes that European cultures are dying out because of the abandonment of a Bronze Age ideology that once made them great. “Once you don’t have young people, you don’t have young energies, and you just have cautious old people, society cannot be vigorous intellectually, culturally, or in any other way,” Luttwak said.
+
+Modern people must cooperate, be sensitive, avoid conflict; modern men must treat women as equals. But “women love warriors,” Luttwak said. And the Bronze Age concept of individual freedom “was antithetical to anything social, was antithetical to society. It was truly individualistic. And the Greeks were happy with that. But the central fact about it is the affirmation of, of life as an individual, artistic act.”
+
+I pointed out that most men nowadays won’t have the opportunity to die in glorious combat. Luttwak countered that he himself had volunteered for three different wars with the Israeli armed forces, “so I experienced it. And I felt totally exhilarated and totally empowered by it.”
+
+“The Bronze Age Pervert is raising the fundamental question before European civilization and its American extension, which is, are you willing to admit and acknowledge this kind of life-affirming ideology, which is what this is,” Luttwak said.
+
+BAP’s many critics have pointed out the LARPing (live-action role-playing) nature of much of this. Is it helpful for men to imagine themselves as Achilles, or just a form of escapism?
+
+“This is just a retreat from reality, a very unmanly retreat from reality I would add, and just an embrace of fantasy and unreality that isn’t really going to help you become a better man, become a better person,” said Jack Butler, a conservative writer who wrote a critique of Bronze Age Mindset for National Review earlier this year. “It will further ratify you in this little niche that you’ve created for yourself and for your friends. With the exception, I guess, that if you take some of the lifting advice seriously, you’ll get some gains.”
+
+Butler agrees with BAP’s assessment of modern society as “deprecating authentic masculinity.” But he doesn’t think the answer is “this nostalgic fantasy of what a man should be at a time when there were fewer people in the world and more cities to conquer.”
+
+Butler highlighted BAP’s disdain for family life, which sets him apart from the other more mainstream masculinity-crisis preachers on the right, such as Sen. Josh Hawley (R-Mo.), who see a recommitment to family life as the solution to what ails the modern man.
+
+Anton now teaches at Hillsdale, the conservative college in Michigan that has become a key institution in the Trump/post-Trump right. Among the students he sees, Bronze Age Mindset is as popular as ever.
+
+“It seems to be more popular with younger people on the right than any kind of conventional conservatism. … I can tell you that as a teacher,” Anton said. “In a number of programs, I come across a lot of people under 25, or, you know, in that area, and the majority of them, at least the males, and some of the women, … have read the book. Whether they agree with it, whether they ultimately accept it is another question. But there’s a sense that, if you’re under a certain age, and you’re in the conservative world, you need to read it.”
+
+Anton thinks this is attributable more to the book’s outrageousness than its content. This is a book that calls developing countries the “Turd World,” full of “zombi [sic] hordes” living in filth and hardly better than animals; it’s a book that argues that “the true environmentalism is racism and has a racist foundation.” BAP uses the word “f----try” freely, calls everything gay and argues that women should have no role in political affairs. It’s the kind of material that would fit in on 4chan.
+
+“We live in a particularly oversensitive age in which people just want to get offended about everything,” Anton said. “And I think that just heightens the natural enjoyment that younger people take in offensive content. And it’s acted as, to use national security jargon, a force multiplier on the book.”
+
+If you’re a lonely young man on the Internet who hates “woke” stuff, it won’t take long to get to BAP. The question is what you do when you get there. Alamariu’s former classmate from Yale remembered finding BAP’s appeal mystifying, and polling younger men to explain it. “It was described to me as, the level of nihilism and dissociation among young men, especially young white men of the middle and lower middle classes, is extremely high,” this person said.
+Mourners gathered at a makeshift memorial outside a tattoo parlor.
+
+Mourners gather outside a tattoo parlor, one of the scenes of a shooting spree by Lyndon McLeod, in Denver on Dec. 28, 2021. | David Zalubowski/AP Photo
+
+And in this environment, where young men could just as easily go down the path of full incel nihilism or overt Nick Fuentes-style white supremacy, BAP’s message of empowerment could actually offer a more salutary alternative. Indeed, Fuentes in particular seems to have recognized BAP as a threat, and has inveighed against him to his followers, known as “groypers,” accusing BAP of being a Jewish establishment plant. “And so you can kind of climb a ladder of BAP to [Jordan] Peterson, who really mystifies the world through like weird Jungian archetypes connected to waking up early and making your bed, into the Ben Shapiros of the world,” the former classmate said. “And all of a sudden you go from being a nihilistic, onanistic teenage boy with no hope in the world to just kind of a normie conservative Republican,” this person said.
+
+But there are those for whom BAP’s message can form part of a destructive worldview. In 2021, a man named Lyndon McLeod shot five people to death in Denver. His accounts on Twitter and Instagram were full of photos of his muscled torso and other tough-guy imagery, like guns and whiskey. He shared passages from Bronze Age Mindset, posting photos of his heavily marked-up copy.
+
+Like BAP, McLeod lamented a world that supposedly disadvantaged traditional men, though he put it more baldly. “Our entire society is made up of shitty little fucks who insult badasses & get away with it because law enforcement & social norms protect the WEAK from the STRONG,” he tweeted in April 2020. “I’m over it. The weak better buckle up ... shit is about to get real.”
+
+McLeod wrote a series of self-published novels in which a protagonist with his name takes revenge on his enemies, which included real people whom McLeod later targeted in his spree. McLeod isn’t representative of BAP’s readers, who are far too numerous to be represented by any one person. But his story shows how the message that traditional masculinity is under threat from a feminized society dedicated to its destruction has the potential to lead some to dark courses of action.
+
+Online, fittingly for a fan of Bronze Age Pervert, Lyndon McLeod wasn’t Lyndon McLeod at all. He went by the name Roman McClay.
+
+Editor’s note: This article was updated to remove the personal information of Costin Alamariu’s classmates in his high school yearbook due to privacy concerns.
